@@ -1,22 +1,38 @@
-// Path: ex01/src/Contact.cpp
-#include "Contact.hpp"
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
-Contact::Contact()
-{
-}
+#include <string>
+#include <iostream>
+#include <iomanip>
 
-Contact::~Contact()
-{
-}
+#define PHONE_NUM_DIGIT 9
 
-void	Contact::setFirstName(std::string firstName)
-{
-	this->firstName = firstName;
-}
+// 多くね？
+// set って一つ一つの方が良いのか。それとも一括セッターでいいのか
+// 要件定義による？
 
-void	Contact::setLastName(std::string lastName)
-{
-	this->lastName = lastName;
-}
+class Contact {
+	public:
+		Contact( void );
+		~Contact( void );
+		void	setAll(void);
+		void	displayAllContent(void);
+		void	setFirstName(std::string firstName);
+		void	setLastName(std::string lastName);
+		void	setNickName(std::string nickName);
+		void	setPhoneNumber(std::string phoneNumber);
+		void	setDarkestSecret(std::string darkestSecret);
+		std::string	getFirstName(void);
+		std::string	getLastName(void);
+		std::string	getNickName(void);
+		std::string	getPhoneNumber(void);
+		std::string	getDarkestSecret(void);
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickName;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
+};
 
-void	Contact::setNickname(std::string nickname)
+#endif
