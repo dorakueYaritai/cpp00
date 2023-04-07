@@ -31,13 +31,13 @@ void	Contact::setAll( void ){
 }
 
 void	Contact::displayAllContent(void){
-	std::cout << "\033[31m";
+	std::cout << BLUE;
 	std::cout << "FirstName is:" << this->getFirstName() << std::endl;
 	std::cout << "LastName is:" << this->getLastName() << std::endl;
 	std::cout << "NickName is:" << this->getNickName() << std::endl;
 	std::cout << "PhoneNumber is:" << this->getPhoneNumber() << std::endl;
 	std::cout << "DarkestSecret is:" << this->getDarkestSecret() << std::endl;
-	std::cout << "\033[30m";
+	std::cout << BLACK;
 }
 
 void	Contact::setFirstName(std::string firstName){
