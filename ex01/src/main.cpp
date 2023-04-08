@@ -15,21 +15,23 @@ int	main( void ){
 	std::string	str;
 	phoneBook	phoneBook;
 
-	std::cout << "\033[30m";
+	std::cout << "DEF_COLOR";
 	while (1)
 	{
 		std::cout << "type COMMAND!!" << std::endl;
 		std::cout << "ADD or SEARCH or EXIT" << std::endl << RED;
 		std::cin >> str;
 		std::cout << "you typed [" << str << "]" << std::endl;
-		std::cout << BLACK;
-		if (std::cin.eof() || str == "EXIT")
+		std::cout << DEF_COLOR;
+		if (std::cin.eof())
+			exit(1);
+		else if (std::cin.eof() || str == "EXIT")
 			break ; 
 		else if (str == "ADD")
 			phoneBook.Add();
 		else if (str == "SEARCH")
 			phoneBook.Search();
 		else
-			std::cout << YELLOW << "ha???" << BLACK << std::endl;
+			std::cout << YELLOW << "ha???" << DEF_COLOR << std::endl;
 	}
 }

@@ -11,22 +11,31 @@ void	Contact::setAll( void ){
 
 	std::cout << "please in your FirstName " << std::endl;
 	std::cin >> str;
+	if (std::cin.eof())
 	this->setFirstName(str);
 
 	std::cout << "please in your LastName " << std::endl;
 	std::cin >> str;
+	if (std::cin.eof())
+		exit(1);
 	this->setLastName(str);
 
 	std::cout << "please in your NickName " << std::endl;
 	std::cin >> str;
+	if (std::cin.eof())
+		exit(1);
 	this->setNickName(str);
 
 	std::cout << "please in your PhoneNumber " << std::endl;
 	std::cin >> str;
+	if (std::cin.eof())
+		exit(1);
 	this->setPhoneNumber(str);
 
 	std::cout << "please in your DarkestSecret " << std::endl;
 	std::cin >> str;
+	if (std::cin.eof())
+		exit(1);
 	this->setDarkestSecret(str);
 }
 
@@ -37,7 +46,7 @@ void	Contact::displayAllContent(void){
 	std::cout << "NickName is:" << this->getNickName() << std::endl;
 	std::cout << "PhoneNumber is:" << this->getPhoneNumber() << std::endl;
 	std::cout << "DarkestSecret is:" << this->getDarkestSecret() << std::endl;
-	std::cout << BLACK;
+	std::cout << DEF_COLOR;
 }
 
 void	Contact::setFirstName(std::string firstName){

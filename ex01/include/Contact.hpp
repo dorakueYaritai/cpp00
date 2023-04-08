@@ -17,6 +17,8 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
+#define DEF_COLOR WHITE
+
 // 多くね？
 // set って一つ一つの方が良いのか。それとも一括セッターでいいのか
 // 要件定義による？
