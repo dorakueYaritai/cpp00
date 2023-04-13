@@ -3,3 +3,5 @@
 *.d
 a.out
 exe
+ex02
+settings.json
