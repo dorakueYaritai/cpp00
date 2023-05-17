@@ -24,7 +24,7 @@ int	main( void ){
 		std::cout << "you typed [" << str << "]" << std::endl;
 		std::cout << DEF_COLOR;
 		if (std::cin.eof())
-			exit(1);
+			std::exit(1);
 		else if (std::cin.eof() || str == "EXIT")
 			break ; 
 		else if (str == "ADD")
@@ -35,3 +35,20 @@ int	main( void ){
 			std::cout << YELLOW << "ha???" << DEF_COLOR << std::endl;
 	}
 }
+
+// int	main(void)
+// {
+// 	std::string str;
+
+// 	str = "kyosuke";
+// 	std::cout << str<< std::endl;
+// 	str += " akiba";
+// 	std::cout << str<< std::endl;
+// 	std::string::const_iterator it = str.begin();
+// 	while (it != str.end())
+// 	{
+// 		char const	&c = *it;
+// 		std::cout << c << " :" << (void *)&c << std::endl;
+// 		++it;
+// 	}
+// }

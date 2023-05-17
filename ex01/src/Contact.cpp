@@ -6,36 +6,55 @@ Contact::Contact( void ){
 Contact::~Contact( void ){
 }
 
+static bool isNumber(const std::string& str)
+{
+	// A regular for loop with an iterator
+	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+		// The iterator points to each character in the string
+		char const &c = *it;
+		// You can use c as a constant reference to a character
+		if (std::isdigit(c) == 0)
+			return false;
+	}
+    return true;
+}
+
 void	Contact::setAll( void ){
 	std::string str;
 
 	std::cout << "please in your FirstName " << std::endl;
 	std::cin >> str;
 	if (std::cin.eof())
+		std::exit(1);
 	this->setFirstName(str);
 
 	std::cout << "please in your LastName " << std::endl;
 	std::cin >> str;
 	if (std::cin.eof())
-		exit(1);
+		std::exit(1);
 	this->setLastName(str);
 
 	std::cout << "please in your NickName " << std::endl;
 	std::cin >> str;
 	if (std::cin.eof())
-		exit(1);
+		std::exit(1);
 	this->setNickName(str);
 
-	std::cout << "please in your PhoneNumber " << std::endl;
-	std::cin >> str;
-	if (std::cin.eof())
-		exit(1);
+	while (1)
+	{
+		std::cout << "please in your PhoneNumber " << std::endl;
+		std::cin >> str;
+		if (std::cin.eof())
+			std::exit(1);
+		if (isNumber(str))
+			break;
+	}
 	this->setPhoneNumber(str);
 
 	std::cout << "please in your DarkestSecret " << std::endl;
 	std::cin >> str;
 	if (std::cin.eof())
-		exit(1);
+		std::exit(1);
 	this->setDarkestSecret(str);
 }
 

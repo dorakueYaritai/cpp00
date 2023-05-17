@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cctype>
 
 // int main(int argc, char **argv) {
 // 	if (argc > 1) {  // コマンドライン引数がある場合
@@ -15,6 +14,12 @@
 // 	return 0;
 // }
 
+static char	toupper(char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - ('a' - 'A'));
+	return (c);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -31,12 +36,13 @@ int	main(int argc, char *argv[])
 			j = 0;
 			while (argv[i][j])
 			{
+				// std::cout << (char)std::toupper(argv[i][j]);
 				std::cout << (char)toupper(argv[i][j]);
-				// std::cout << toupper(argv[i][j]);
 				j++;
 			}
 			i++;
 		}
+		std::cout << std::endl;
 	}
 	return (0);
 }
