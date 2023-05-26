@@ -20,13 +20,13 @@ int	main( void ){
 	{
 		std::cout << "type COMMAND!!" << std::endl;
 		std::cout << "ADD or SEARCH or EXIT" << std::endl << RED;
-		std::cin >> str;
+		getline(std::cin, str);
 		std::cout << "you typed [" << str << "]" << std::endl;
 		std::cout << DEF_COLOR;
 		if (std::cin.eof())
 			std::exit(1);
-		else if (std::cin.eof() || str == "EXIT")
-			break ; 
+		else if (str == "EXIT")
+			phoneBook.Exit();
 		else if (str == "ADD")
 			phoneBook.Add();
 		else if (str == "SEARCH")

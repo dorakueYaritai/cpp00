@@ -11,8 +11,8 @@ class phoneBook {
 		void	Add( void );
 		void	Search( void );
 		void	Exit( void );
-		void	DesplayAllContact(void);
 	private:
+		void	DesplayAllContact(void);
 		Contact	ContactArray[CONTACT_MAX];
 		int		contactCount;
 		int		nowContactIndex;

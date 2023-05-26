@@ -18,31 +18,10 @@ void	phoneBook::Add( void )
 		this->contactCount++;
 }
 
-// void	phoneBook::Search( void ){
-// 	int	key_index;
-// 	std::string	buf;
-
-// 	this->DesplayAllContact();
-// 	std::cout << "What person infomation do you want know?" << std::endl;
-// 	std::cout << "Tell me by INDEX" << std::endl;
-// 	while (1)
-// 	{
-// 		std::cout << "OHHHHHHHHH" << std::endl;
-// 		std::cin >> key_index;
-// 		// "hello" 0
-// 		// "0" 0
-// 		if (std::cin.fail())
-// 		{
-// 			std::cout << "T Y P E I N D E X !!!!?" << std::endl;
-// 			std::cin >> buf;
-// 		}
-// 		else if (key_index < 0 && key_index >= this->contactCount)
-// 			std::cout << "Are you kidding me..?" << std::endl;
-// 		else
-// 			break ;
-// 	}
-// 	this->ContactArray[key_index].displayAllContent();
-// }
+void	phoneBook::Exit( void )
+{
+	std::exit(0);
+}
 
 void	phoneBook::Search( void ){
 	std::string	key_index;
@@ -77,7 +56,6 @@ void	phoneBook::Search( void ){
 #define COLOR_CONTENT BLUE
 
 void	printFormat(std::string str){
-	// std::cout <<"|";
 	std::cout << COLOR_FLAME << "|" << DEF_COLOR;
 
 	std::ios::fmtflags flagsSaved = std::cout.flags();

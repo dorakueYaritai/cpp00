@@ -23,19 +23,19 @@ void	Contact::setAll( void ){
 	std::string str;
 
 	std::cout << "please in your FirstName " << std::endl;
-	std::cin >> str;
+	getline(std::cin, str);
 	if (std::cin.eof())
 		std::exit(1);
 	this->setFirstName(str);
 
 	std::cout << "please in your LastName " << std::endl;
-	std::cin >> str;
+	getline(std::cin, str);
 	if (std::cin.eof())
 		std::exit(1);
 	this->setLastName(str);
 
 	std::cout << "please in your NickName " << std::endl;
-	std::cin >> str;
+	getline(std::cin, str);
 	if (std::cin.eof())
 		std::exit(1);
 	this->setNickName(str);
@@ -43,7 +43,7 @@ void	Contact::setAll( void ){
 	while (1)
 	{
 		std::cout << "please in your PhoneNumber " << std::endl;
-		std::cin >> str;
+		getline(std::cin, str);
 		if (std::cin.eof())
 			std::exit(1);
 		if (isNumber(str))
@@ -52,7 +52,7 @@ void	Contact::setAll( void ){
 	this->setPhoneNumber(str);
 
 	std::cout << "please in your DarkestSecret " << std::endl;
-	std::cin >> str;
+	getline(std::cin, str);
 	if (std::cin.eof())
 		std::exit(1);
 	this->setDarkestSecret(str);

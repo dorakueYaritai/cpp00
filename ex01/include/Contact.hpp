@@ -29,17 +29,17 @@ class Contact {
 		~Contact( void );
 		void	setAll(void);
 		void	displayAllContent(void);
-		void	setFirstName(std::string firstName);
-		void	setLastName(std::string lastName);
-		void	setNickName(std::string nickName);
-		void	setPhoneNumber(std::string phoneNumber);
-		void	setDarkestSecret(std::string darkestSecret);
 		std::string	getFirstName(void);
 		std::string	getLastName(void);
 		std::string	getNickName(void);
 		std::string	getPhoneNumber(void);
 		std::string	getDarkestSecret(void);
 	private:
+		void	setFirstName(std::string firstName);
+		void	setLastName(std::string lastName);
+		void	setNickName(std::string nickName);
+		void	setPhoneNumber(std::string phoneNumber);
+		void	setDarkestSecret(std::string darkestSecret);
 		std::string	firstName;
 		std::string	lastName;
 		std::string	nickName;
