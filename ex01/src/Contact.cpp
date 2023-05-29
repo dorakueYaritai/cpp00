@@ -8,11 +8,8 @@ Contact::~Contact( void ){
 
 static bool isNumber(const std::string& str)
 {
-	// A regular for loop with an iterator
 	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-		// The iterator points to each character in the string
 		char const &c = *it;
-		// You can use c as a constant reference to a character
 		if (std::isdigit(c) == 0)
 			return false;
 	}
@@ -22,22 +19,34 @@ static bool isNumber(const std::string& str)
 void	Contact::setAll( void ){
 	std::string str;
 
-	std::cout << "please in your FirstName " << std::endl;
-	getline(std::cin, str);
-	if (std::cin.eof())
-		std::exit(1);
+	while (1){
+		std::cout << "please in your FirstName " << std::endl;
+		getline(std::cin, str);
+		if (std::cin.eof())
+			std::exit(1);
+		if (str.size())
+			break ;
+	}
 	this->setFirstName(str);
 
-	std::cout << "please in your LastName " << std::endl;
-	getline(std::cin, str);
-	if (std::cin.eof())
-		std::exit(1);
+	while (1){
+		std::cout << "please in your LastName " << std::endl;
+		getline(std::cin, str);
+		if (std::cin.eof())
+			std::exit(1);
+		if (str.size())
+			break ;
+	}
 	this->setLastName(str);
 
-	std::cout << "please in your NickName " << std::endl;
-	getline(std::cin, str);
-	if (std::cin.eof())
-		std::exit(1);
+	while (1){
+		std::cout << "please in your NickName " << std::endl;
+		getline(std::cin, str);
+		if (std::cin.eof())
+			std::exit(1);
+		if (str.size())
+			break ;
+	}
 	this->setNickName(str);
 
 	while (1)
@@ -46,15 +55,20 @@ void	Contact::setAll( void ){
 		getline(std::cin, str);
 		if (std::cin.eof())
 			std::exit(1);
-		if (isNumber(str))
+		if (str.size() && isNumber(str))
 			break;
+		std::cout << "Not charactor, NUMBER PLEASE! " << std::endl;
 	}
 	this->setPhoneNumber(str);
 
-	std::cout << "please in your DarkestSecret " << std::endl;
-	getline(std::cin, str);
-	if (std::cin.eof())
-		std::exit(1);
+	while (1){
+		std::cout << "please in your DarkestSecret " << std::endl;
+		getline(std::cin, str);
+		if (std::cin.eof())
+			std::exit(1);
+		if (str.size())
+			break ;
+	}
 	this->setDarkestSecret(str);
 }
 
@@ -107,29 +121,3 @@ std::string	Contact::getDarkestSecret( void ){
 std::string	Contact::getPhoneNumber( void ){
 	return (this->phoneNumber);
 }
-
-
-// ここだけポインタ代入じゃなくて値代入w
-// void	Contact::setPhoneNumber(int phoneNumber[PHONE_NUM_DIGIT]){
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < PHONE_NUM_DIGIT){
-// 		this->phoneNumber[i] = phoneNumber[i];
-// 		i++;
-// 	}
-// }
-
-// int	main()
-// {
-// 	Contact instance;
-
-// 	instance.setAll();
-// 	std::cout << instance.getFirstName() << std::endl;
-// 	std::cout << instance.getLastName() << std::endl;
-// 	std::cout << instance.getNickName() << std::endl;
-// 	std::cout << instance.getPhoneNumber() << std::endl;
-// 	std::cout << instance.getDarkestSecret() << std::endl;
-// 	std::cout << "Thank you" << std::endl;
-
-// }

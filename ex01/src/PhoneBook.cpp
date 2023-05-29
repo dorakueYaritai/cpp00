@@ -40,6 +40,7 @@ void	phoneBook::Search( void ){
 		std::cin >> key_index;
 		if (std::cin.eof())
 			std::exit(1);
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		index = atoi(key_index.c_str());
 		if (key_index != "0" && index == 0)
 			std::cout << "T Y P E I N D E X !!!!?" << std::endl;
